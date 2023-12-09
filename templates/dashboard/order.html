@@ -12,7 +12,7 @@
             <table class="table bg-white">
                 <thead class="bg-info">
                     <tr class="text-white">
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Product</th>
                         <th scope="col">Category</th>
                         <th scope="col">Quantity</th>
@@ -20,23 +20,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for orders in orders%}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>{{orders.product.name}}</td>
+                        <td>{{orders.product.category}}</td>
+                        <td>{{orders.quantity}}</td>
                         <td>
-                            Broni
+                            {{orders.staff.username}}
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>
-                            Kenneth
-                        </td>
-                    </tr>
-  
+                    {% endfor %}
 {% endblock %}

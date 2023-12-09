@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <div class="container">
     <div class="row mt-4">
         <div class="col-md-4">
@@ -7,7 +8,8 @@
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        
+                        {% csrf_token %}
+                        {{order_form|crispy}}
                         <input class="btn btn-info btn-block" type="submit" value="Make Request">
                     </form>
                 </div>
@@ -28,28 +30,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {% for orders in orders %}
+                            {% if orders.staff == user %}
                             <tr>
-                                <td>Book</td>
-                                <td>Stationary</td>
-                                <td>10</td>
+                                <td>{{orders.product.name}}</td>
+                                <td>{{orders.product.category}}</td>
+                                <td>{{orders.quantity}}</td>
                             </tr>
-							<tr>
-                                <td>Book</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-							<tr>
-                                <td>Book</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-							<tr>
-                                <td>Book</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-                            
+                            {% endif %}
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

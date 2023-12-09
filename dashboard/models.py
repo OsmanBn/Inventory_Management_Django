@@ -22,8 +22,8 @@ class Product(models.Model):
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     staff = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    quantity = models.PositiveIntegerField(null=True)
-
+    order_quantity = models.PositiveIntegerField(null=True)
+    date = models.DateField(null=True)
     def __str__(self):
         return f'{self.product}-{self.staff.username}'
     
