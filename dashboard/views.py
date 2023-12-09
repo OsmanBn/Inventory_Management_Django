@@ -10,9 +10,16 @@ from django.contrib.auth.models import User
 @login_required
 def index(request):
     orders = Order.objects.all()
-
+    if request.method == 'POST':
+        order_form = OrderForm(request.POST)
+        
+        if order_form.is_valid():
+            order_form.save()
+    else:
+        order_form = OrderForm()
     context = {
         'orders':orders,
+        'order_form': order_form,
     }
     return render(request, 'dashboard/index.html', context)
 
