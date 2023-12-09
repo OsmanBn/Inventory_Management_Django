@@ -27,6 +27,7 @@
                                 <th scope="col">Product</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">Quantity</th>
+                                <th scope="col">Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +36,8 @@
                             <tr>
                                 <td>{{orders.product.name}}</td>
                                 <td>{{orders.product.category}}</td>
-                                <td>{{orders.quantity}}</td>
+                                <td>{{orders.order_quantity}}</td>
+                                <td>{{orders.date}}</td>
                             </tr>
                             {% endif %}
                             {% endfor %}

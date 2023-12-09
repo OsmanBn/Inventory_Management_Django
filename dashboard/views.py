@@ -14,7 +14,10 @@ def index(request):
         order_form = OrderForm(request.POST)
         
         if order_form.is_valid():
-            order_form.save()
+            instance=order_form.save(commit=False)
+            instance.staff = request.user
+            instance.save()
+            return redirect('dashboard-index')
     else:
         order_form = OrderForm()
     context = {
