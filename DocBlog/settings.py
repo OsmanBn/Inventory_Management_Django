@@ -129,6 +129,13 @@ MEDIA_ROOT = (BASE_DIR / 'media')
 
 MEDIA_URL = '/media/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USER_HOST = 'djangotestinventory@gmail.com'
+EMAIL_HOST_PASSWORD ='Pharaon69'
+
 STATICFILES_DIRS = [
     BASE_DIR / "static/"
 ]
