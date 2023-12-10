@@ -11,6 +11,7 @@ from django.contrib import messages
 @login_required
 def index(request):
     orders = Order.objects.all()
+    products = Product.objects.all()
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
         
@@ -24,6 +25,7 @@ def index(request):
     context = {
         'orders':orders,
         'order_form': order_form,
+        'products': products,
     }
     return render(request, 'dashboard/index.html', context)
 
