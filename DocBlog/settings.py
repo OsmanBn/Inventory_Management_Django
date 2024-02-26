@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s#y9j9w**7=%3mwnqw9n4fv#$6-alaqxgl(@!j*+%$q-4rre9@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -146,4 +146,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'dashboard-index'
 
-LOGIN_URL = 'user-login'
+LOGIN_URL = 'user-login' 

@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-8">
                 <table class="table bg-white">
-                    <thead class="bg-info">
+                    <thead class="bg-dark">
                         <tr class="text-white">
                             <th scope="col">Name</th>
                             <th scope="col">Category</th>
@@ -44,7 +44,7 @@
                             <td>{{ item.category }}</td>
                             <td>{{ item.quantity }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{% url 'dashboard-product-edit' item.id %}">Edit</a>
+                                <a class="btn btn-dark btn-sm" href="{% url 'dashboard-product-edit' item.id %}">Edit</a>
                                 <a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' item.id %}">Delete</a>
                             </td>
                         </tr>

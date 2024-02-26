@@ -19,6 +19,7 @@ def index(request):
         order_form = OrderForm(request.POST)
         
         if order_form.is_valid():
+            
             instance=order_form.save(commit=False)
             instance.staff = request.user
             instance.save()
